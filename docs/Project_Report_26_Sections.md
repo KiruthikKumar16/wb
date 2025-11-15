@@ -37,6 +37,19 @@ Build a smart-jewelry safety system with: (1) a software “virtual wearable” 
 - MQTT pub/sub is widely adopted for IoT due to low overhead and decoupled producers/consumers.
 - Reliable emergency communication often leverages cloud messaging to avoid local network constraints.
 
+### Selected Works
+
+| No | Title | Authors | Year | Key Relevance |
+|---:|---|---|---:|---|
+| 1 | Comparative Analysis of Vision-Based vs. Inertial Sensor Systems for Presentation Control | M. Patel, A. Singh | 2018 | Contextual study comparing HCI approaches; highlights the lack of precision in early accelerometer‑only systems for subtle gestures, favoring IMU integration. |
+| 2 | Drift Correction and Dynamic Gesture Capture using MPU‑6050 and Sensor Fusion | L. Chen, Y. Wei | 2020 | Uses MPU‑6050 (3‑axis accelerometer/gyroscope) and Kalman filters to improve gesture accuracy and stability, including rotational velocity estimation. |
+| 3 | Utilizing ESP32 for Low‑Latency Bluetooth Low Energy (BLE) Human Interface Device Implementation | S. Rodriguez, J. Smith | 2022 | Confirms BLE HID over GATT Profile (HOGP) as a standard for low‑power wireless peripheral emulation across operating systems. |
+| 4 | Development of a Wearable Smart Glove utilizing ESP32 and Multiple MPU‑6050 Sensors | T. Kim, B. Lee | 2021 | Demonstrates ESP32 + MPU‑6050 for dynamic movement capture and gesture interpretation in wearables. |
+
+Notes for this project:
+- For discreet ring/pendant gestures, a small IMU with basic fusion (complementary/Kalman) reduces false triggers compared to taps alone.
+- BLE HID is suitable for a ring→phone link; this project currently uses MQTT to the server, but BLE can transport the trigger to the phone reliably and with low power.
+
 
 ## 7. Technical Specifications and Requirements
 - Functional requirements:
