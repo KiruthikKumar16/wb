@@ -1,0 +1,13 @@
+flowchart LR
+  subgraph Local
+    PC[PC/Phone]
+  end
+  subgraph Cloud
+    Broker[(MQTT Broker)]
+    Twilio[(Twilio SMS/Voice)]
+  end
+  Device[[ESP32 or Simulator]] --> Broker
+  PC --> Broker
+  PC --> Twilio
+
+

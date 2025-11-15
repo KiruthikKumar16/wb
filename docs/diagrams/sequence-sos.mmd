@@ -1,0 +1,13 @@
+sequenceDiagram
+  participant Dev as Wearable/Sim
+  participant MQ as MQTT Broker
+  participant S as Python Server
+  participant C as Contacts
+
+  Dev->>MQ: publish wearable/{id}/sos
+  MQ-->>S: forward SOS
+  S->>Dev: publish wearable/{id}/ack
+  S->>C: Send SMS (Twilio)
+  S->>C: Optional Voice Call
+
+

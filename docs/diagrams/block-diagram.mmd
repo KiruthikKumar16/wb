@@ -1,0 +1,22 @@
+flowchart TB
+  subgraph Device
+    SIM[ESP32 / GUI / CLI]
+    GPS[GPS (optional)]
+    VIB[Vibration Sensor]
+    BUZ[Buzzer/Haptic]
+  end
+  subgraph Network
+    MQTT[(MQTT Broker)]
+  end
+  subgraph Cloud
+    SRV[Server: Twilio, CSV, RateLimit]
+    SMS[SMS/Voice]
+  end
+  SIM -->|Status/SOS/Tamper| MQTT
+  GPS -. optional .- SIM
+  VIB --> SIM
+  BUZ <-- ACK --> SIM
+  MQTT --> SRV
+  SRV --> SMS
+
+

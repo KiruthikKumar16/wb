@@ -1,0 +1,8 @@
+flowchart LR
+  User((User)) -->|Tap/Press| Wearable[Smart Jewelry (real or simulated)]
+  Wearable -->|MQTT| Broker[(MQTT Broker)]
+  Broker --> Server[Python Server]
+  Server -->|SMS/Call| Contacts[Trusted Contacts]
+  Server -->|ACK| Wearable
+
+

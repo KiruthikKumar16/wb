@@ -1,0 +1,11 @@
+flowchart TD
+  A[Trigger Detected] --> B{Armed?}
+  B -- No --> Z[Ignore & Notify Disarmed]
+  B -- Yes --> C[Start Countdown]
+  C --> D{Cancel?}
+  D -- Yes --> E[Abort]
+  D -- No --> F[Publish SOS]
+  F --> G[Wait for ACK]
+  G --> H[Feedback (beep/haptic)]
+
+

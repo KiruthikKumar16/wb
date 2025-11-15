@@ -1,0 +1,5 @@
+paho-mqtt==1.6.1
+twilio==9.2.3
+python-dotenv==1.0.1
+
+
